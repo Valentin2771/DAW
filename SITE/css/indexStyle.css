@@ -1,0 +1,103 @@
+/* Styles for landing page and post page */
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url('../img/moonlanding_30.jpg');
+    background-attachment: fixed;
+    background-color: antiquewhite;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+h1, h2, h3{
+    text-align: center;
+}
+
+h1 a, h2 a, h3 a{
+    color: inherit;
+}
+.blue{
+    color: royalblue;
+    background-color: whitesmoke;
+    width: fit-content;
+    margin-top: 1.6rem;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+    padding: .3rem;
+}
+
+.gray{
+    color: lightgray;
+}
+
+.author{
+    font-size: small;
+}
+a{
+    text-decoration: none;
+    display: inline-block;
+}
+
+main, header, footer{
+    width: 90%;
+    margin: 0 auto .3rem auto;
+    padding: .3rem;
+    background-color: antiquewhite;
+
+}
+
+header{
+    background-image: url('../img/vintage-cameras_120.jpg');
+    background-attachment: fixed;
+}
+
+nav{
+    padding: inherit;
+    background-color: inherit;
+}
+
+nav > a{
+    background-color: gainsboro;
+    padding: .3rem;
+}
+
+header, footer{
+    min-height: 25vh;
+}
+
+#footer-content{
+    margin-top: 2.5rem;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.one-third{
+    width: 33%;
+    float: left;
+    border-top: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+    border-radius: .1rem;
+    padding: .3rem;
+    overflow: auto;
+}
+
+.clearfix::after{
+    display:table;
+    content:"";
+    clear:both;
+}
+
+.single-post{
+    margin: 0 auto;
+    width: 98%;
+    border: 1px solid lightgray;
+    border-radius: .3rem;
+    padding: .3rem;
+}
+
+.post-img > img, .single-post-img > img {
+    max-width: 100%;
+    margin: 0 auto;
+    padding:.3em;
+}

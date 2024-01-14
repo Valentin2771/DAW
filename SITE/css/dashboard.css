@@ -1,0 +1,65 @@
+/* Styles for dashboard */
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+span {
+    font-size: small;
+}
+.red {
+    color: red;
+}
+h1, h2{
+    text-align: center;
+}
+.sixty{
+    width:60%;
+    float: left;
+    
+}
+
+.forty{
+    width:40%;
+    float: left;
+    
+}
+
+#post-form{
+    border: 2px black solid;
+    border-radius: .3rem;
+    width:95%;
+    padding: 1rem;
+}
+
+#title, #content{
+    display: block;
+    margin: .3rem;
+    width: 90%;
+}
+
+#content{
+    height:18rem;
+    padding: .3rem;
+    font-size: medium;
+}
+
+.clearfix::after{
+    display:table;
+    content:"";
+    clear:both;
+}
+
+table{
+    width: 90%;
+}
+
+table, th, td{
+    border: 1px black solid;
+    border-collapse: collapse;
+}
+
+td, th{
+    padding: .3rem;
+    font-size: small;
+}
