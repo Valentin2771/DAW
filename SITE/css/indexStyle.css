@@ -96,8 +96,12 @@ header, footer{
     padding: .3rem;
 }
 
-.post-img > img, .single-post-img > img {
+.post-img > img {
     max-width: 100%;
-    margin: 0 auto;
+    padding:.3em;
+}
+
+.single-post-img > img{
+    width: 100%;
     padding:.3em;
 }
