@@ -30,30 +30,28 @@ require_once("backend/indexBackend.php");
                     
                 } else {
 
-                    for($i = 0; $i < count($posts); $i++) {
-                        echo'
+                    for($i = 0; $i < count($posts); $i++): ?>
+            
                         <article class="one-third">
                             <h3 class="blue">
-                                <a href="post.php?id='. $posts[$i]['id'] .'&page='. $pageNumber . '">' . $posts[$i]['post_title']. '</a>
+                                <a href="post.php?id=<?php echo $posts[$i]['id'] . '&page=' . $pageNumber; ?>"><?php echo $posts[$i]['post_title'];?></a>
                             </h3>
                             <div class="post-img">
-                                <img src="img/' . $posts[$i]['name'] . '" alt="post image">
+                                <img src="img/<?php echo $posts[$i]['name'];?>" alt="post image">
                             </div>
-                            <p>' . mb_strimwidth($posts[$i]['post_content'], 0, 100, '...') . '
-                            </p>
-                            <p class="author">Author: ' . $posts[$i]['first_name'] . ' ' . $posts[$i]['last_name'] . ' &bull; ' . $posts[$i]['created_at'] . '</p>
-                            <a href="post.php?id='. $posts[$i]['id'] .'">More</a>
+                            <p><?php echo mb_strimwidth($posts[$i]['post_content'], 0, 100, '...'); ?></p>
+                            <p class="author">Author: <?php echo $posts[$i]['first_name'] . ' ' . $posts[$i]['last_name'] . ' &bull; ' . $posts[$i]['created_at']; ?></p>
+                            <a href="post.php?id=<?php echo $posts[$i]['id']; ?>">More</a>
                         </article>
-                            ';
-                        // We need to clearfix after each line of three articles or at the end of the last article
-                        // in order to avoid unwanted floating effects
+                        
+                        <!-- We need to clearfix after each line of three articles or at the end of the last article -->
+                        <!-- in order to avoid unwanted floating effects -->
+                        <?php endfor;
                         if((($i + 1 != 0) && (($i + 1) % 3 == 0)) || $i == count($posts) - 1) echo '<div class="clearfix"></div>';
                     }
-                }
-            } catch(Exception $e) {
+                } catch(Exception $e) {
                 echo $e->getMessage();
-            }
-            
+            }         
         ?>
         </section>
         <div id="pagination">

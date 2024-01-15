@@ -98,6 +98,7 @@ header, footer{
 
 .post-img > img {
     max-width: 100%;
+    height: auto;
     padding:.3em;
 }
 
