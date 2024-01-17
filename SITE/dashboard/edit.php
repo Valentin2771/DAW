@@ -1,5 +1,5 @@
 <?php
-require_once("backend/editBackend.php");
+require_once __DIR__."/backend/editBackend.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">

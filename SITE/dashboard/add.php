@@ -1,5 +1,5 @@
 <?php
-require_once("backend/addBackend.php");
+require_once __DIR__."/backend/addBackend.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,6 +50,5 @@ require_once("backend/addBackend.php");
                 </div>
             </section>
         </div>
-     
     </body>
 </html>

@@ -1,25 +1,34 @@
 <?php
 session_start();
+
 if(!(isset($_SESSION['authenticated']) && ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'writer'))){
     header('location: ../login.php');
     die;
 }
 
-// These includes will also work after including in add.php
-
-require_once "../backend/config.php";
-require_once "../backend/helper.php";
-
-
-// We need to populate the picture table
-
-$sql = "SELECT * from pics";
-$stmt = $connection->query($sql);
-$pictures = $stmt->fetchAll();
-$sql = $stmt = null;
+require_once __DIR__."/../../backend/config.php";
+require_once __DIR__."/../../backend/helper.php";
 
 $title = $content = $public = "";
 $titleError = $contentError = $pictureError = "";
+
+try{
+    if(!isset($connection)){
+        throw new Exception();
+    } 
+} catch(Exception $e){
+    echo "For some reason, something went wrong...<br>";
+    // echo $e->getMessage(); // For a further log
+    die;
+}
+
+// We need to populate the picture table before allowing for changes in the database
+
+$sql = "SELECT * from pics";
+if($stmt = $connection->query($sql)){
+    $pictures = $stmt->fetchAll(); 
+}
+$stmt = null;
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $title = sanitize($_POST['title']);
@@ -40,6 +49,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
 
     if(empty($titleError) && empty($contentError) && empty($pictureError)){
+
         $sql = "INSERT INTO posts (post_title, post_content, author_id, picture_id, public) VALUES(:post_title, :post_content, :author_id, :picture_id, :public)";
 
         if($stmt = $connection->prepare($sql)){
@@ -57,6 +67,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             }
         }
         $stmt = null;
-        $connection = null;
+        $connection = null;          
     }
 }

@@ -43,14 +43,14 @@
                             <p class="author">Author: <?php echo $posts[$i]['first_name'] . ' ' . $posts[$i]['last_name'] . ' &bull; ' . $posts[$i]['created_at']; ?></p>
                             <a href="post.php?id=<?php echo $posts[$i]['id']; ?>">More</a>
                         </article>
-                        
                         <!-- We need to clearfix after each line of three articles or at the end of the last article -->
                         <!-- in order to avoid unwanted floating effects -->
-                        <?php endfor;
-                        if((($i + 1 != 0) && (($i + 1) % 3 == 0)) || $i == count($posts) - 1) echo '<div class="clearfix"></div>';
+                        <?php 
+                            if((($i + 1 != 0) && (($i + 1) % 3 == 0)) || $i == count($posts) - 1) echo '<div class="clearfix"></div>';
+                             endfor;
                     }
                 } catch(Exception $e) {
-                echo "Something wrong happened...<br>";
+                echo "For some reason, something went wrong...<br>";
                 // echo $e->getMessage(); // For a further log
             }
             

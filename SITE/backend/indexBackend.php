@@ -38,27 +38,28 @@ try {
 
         throw new Exception();
         
-    } else {
-        $stmt = $connection->prepare($sql);
-        $stmt->bindParam(':postsPerPage', $postsPerPage, PDO::PARAM_INT);
-        $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
-    
-        if($stmt->execute()){
-            $posts = $stmt->fetchAll();
-    
-            if($posts == false){
-                header("location: index.php");
-                die();
-            }
-        }
-        
-        $stmt = null;
-        $connection = null;
-    }
-
+    } 
 } catch(Exception $e){
     echo "For some reason, something went wrong...<br>";
     // echo $e->getMessage(); // For a further log
     die;
 }
+
+$stmt = $connection->prepare($sql);
+$stmt->bindParam(':postsPerPage', $postsPerPage, PDO::PARAM_INT);
+$stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
+
+if($stmt->execute()){
+    $posts = $stmt->fetchAll();
+
+    if($posts == false){
+        header("location: index.php");
+        die();
+    }
+}
+
+$stmt = null;
+$connection = null;
+
+
  
