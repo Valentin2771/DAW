@@ -1,10 +1,13 @@
 <?php
-require_once("backend/registerBackend.php");
 session_start();
+
+require_once __DIR__."/backend/registerBackend.php";
+
 if(isset($_SESSION['authenticated'])){
     header("Location: user.php");
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>

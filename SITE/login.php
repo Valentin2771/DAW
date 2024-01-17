@@ -1,5 +1,5 @@
 <?php
-require_once('backend/loginBackend.php');
+    require_once __DIR__. "/backend/loginBackend.php";
 ?>
 <!DOCTYPE html>
 <html>

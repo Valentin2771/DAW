@@ -1,11 +1,13 @@
 <?php
     session_start();
+    
     if(!isset($_SESSION['authenticated'])){
+        // only an authenticated user is allowed to perform a password change
         header('location: login.php');
         die;
     }
 
-    require_once('backend/resetPasswordBackend.php');
+    require_once __DIR__. "/backend/resetPasswordBackend.php";
 ?>
 
 <!DOCTYPE html>

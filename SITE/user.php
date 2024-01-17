@@ -1,4 +1,5 @@
 <?php
+    error_reporting(0);
     session_start();
 
     // check if user is authenticated
@@ -6,7 +7,7 @@
         header('location: login.php');
         die;
     }
-    require_once("backend/config.php");
+    require_once __DIR__."/backend/config.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">

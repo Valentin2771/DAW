@@ -1,5 +1,5 @@
 <?php 
-require_once("backend/indexBackend.php");
+    require_once __DIR__."/backend/indexBackend.php";
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +26,7 @@ require_once("backend/indexBackend.php");
         <?php
             try{
                 if(!isset($posts)){
-                    throw new Exception("Something wrong happened...<br>");
+                    throw new Exception();
                     
                 } else {
 
@@ -50,8 +50,10 @@ require_once("backend/indexBackend.php");
                         if((($i + 1 != 0) && (($i + 1) % 3 == 0)) || $i == count($posts) - 1) echo '<div class="clearfix"></div>';
                     }
                 } catch(Exception $e) {
-                echo $e->getMessage();
-            }         
+                echo "Something wrong happened...<br>";
+                // echo $e->getMessage(); // For a further log
+            }
+            
         ?>
         </section>
         <div id="pagination">

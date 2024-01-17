@@ -1,7 +1,7 @@
 <?php
-    require_once("backend/postBackend.php");
-
+    require_once __DIR__."/backend/postBackend.php";
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>
