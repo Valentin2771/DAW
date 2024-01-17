@@ -10,7 +10,7 @@ try{
 	// echo "Success!";
 } catch (PDOException $e){
 	
-	echo "For some reason, we failed while trying to connect to the database...<br>";
-	// echo "Couldn't connect to the database: " . $e->getMessage();
+	echo "Failed to connect to database...<br>";
+	// echo $e->getMessage(); // For a further log
 }
 

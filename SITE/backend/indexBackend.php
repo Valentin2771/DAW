@@ -1,5 +1,6 @@
 <?php
-require_once("config.php");
+
+require_once __DIR__."/config.php";
 
 $postsPerPage = 6;
 
@@ -12,7 +13,7 @@ if(isset($_GET['page']) && is_numeric($_GET['page'])){
 $offset = $postsPerPage * $pageNumber - $postsPerPage;
 
 session_start();
-// Only an authenticated user can read a private article
+// Only authenticated users can see private articles
 if(isset($_SESSION['authenticated'])){
     $allPosts = "";
 } else {
@@ -35,7 +36,7 @@ $sql = "SELECT posts.id,
 try {
     if(!isset($connection)){
 
-        throw new Exception("For some reason, something went wrong...<br>");
+        throw new Exception();
         
     } else {
         $stmt = $connection->prepare($sql);
@@ -56,6 +57,8 @@ try {
     }
 
 } catch(Exception $e){
-    echo $e->getMessage();
+    echo "For some reason, something went wrong...<br>";
+    // echo $e->getMessage(); // For a further log
+    die;
 }
  

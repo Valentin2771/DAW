@@ -1,6 +1,6 @@
 <?php
 
-require_once("config.php");
+require_once __DIR__. "/config.php";
 
 if(isset($_GET['id']) && is_numeric($_GET['id'])){
     $id = intval($_GET['id']);
@@ -12,27 +12,42 @@ if(isset($_GET['id']) && is_numeric($_GET['id'])){
     ON posts.picture_id = pics.id
     WHERE posts.id = :id";
 
-    if($stmt = $connection->prepare($sql)){
-        $stmt->bindParam(':id', $id);
-
-        if($stmt->execute()){
-            $post = $stmt->fetch();
-            session_start();
-            if($post == false || ($post['public'] == 0 && !isset($_SESSION['authenticated']))) {
-                header('location: /index.php');
-                die;
-            }
-            // A variable declared outside a function has a global scope
-            $title = $post['post_title'];
-            $content = $post['post_content'];
-            $created = $post['created_at'];
-            $modified = $post['modified_at'];
-            $author = $post['first_name'] . ' ' . $post['last_name'];
-            $picture = $post['name'];
+    try{
+        if(!isset($connection)) {
+            
+            throw new Exception();
         }
-        $stmt = null;
+        else{
+            if($stmt = $connection->prepare($sql)){
+                $stmt->bindParam(':id', $id);
+        
+                if($stmt->execute()){
+                    $post = $stmt->fetch();
+                    session_start();
+                    if($post == false || ($post['public'] == 0 && !isset($_SESSION['authenticated']))) {
+                        header('location: index.php'); // If this page is accessed directly, it is redirected to an empty page!
+                        die;
+                    }
+                    // A variable declared outside a function has a global scope
+                    $title = $post['post_title'];
+                    $content = $post['post_content'];
+                    $created = $post['created_at'];
+                    $modified = $post['modified_at'];
+                    $author = $post['first_name'] . ' ' . $post['last_name'];
+                    $picture = $post['name'];
+                }
+                $stmt = null;
+            }
+            $connection = null;
+        }
+
+    } catch(Exception $e){
+        echo "For some reason, something went wrong...<br>";
+        // echo $e->getMessage() // For a further log
+        die;
     }
-    $connection = null;
+
+    
 } else {
     header('location: ../index.php');
     die;
