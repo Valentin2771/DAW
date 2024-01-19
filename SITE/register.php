@@ -35,6 +35,7 @@ if(isset($_SESSION['authenticated'])){
                 <canvas id="captcha"></canvas>
             </div>
             <span id="buttonVal">Validate</span>
+            <a href="index.php" target="_self" class="button-link">First page</a>
         </div>
         <script src="js/captcha.js"></script>
     </body>

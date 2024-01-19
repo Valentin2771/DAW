@@ -17,7 +17,8 @@
                 <input type="password" name="password" placeholder="Password"><br>
                 <span class="red"><?php echo $passwordError; ?></span><br>
                 <input type="submit" value="Login"><br>
-            </form>
+            </form><br>
+            <a href="index.php" target="_self" class="button-link">First page</a>
         </div>
     </body>
 </html>

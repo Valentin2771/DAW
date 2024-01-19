@@ -29,10 +29,17 @@ h1, h2{
     cursor: pointer;    
 }
 
+a:visited, a:link {
+    color: royalblue;
+}
+
 .red {
     color: red;
 }
 
+.green {
+    color: green;
+}
 /*sendMail styles */
 
 #mail-form{
@@ -56,7 +63,8 @@ h1, h2{
     text-decoration: none;
     display: inline-block;
     background-color: gainsboro;
-    padding: .3rem;
+    border-radius: .3rem;
+    padding: .4rem;
     margin-bottom: .3rem;
     margin-left: .3rem;
 }

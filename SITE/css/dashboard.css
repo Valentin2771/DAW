@@ -69,7 +69,13 @@ td, th{
     text-decoration: none;
     display: inline-block;
     background-color: gainsboro;
-    padding: .3rem;
+    border-radius: .3rem;
+    padding: .4rem;
     margin-bottom: .3rem;
     margin-left: .3rem;
+}
+
+a:visited, a:link{
+    color: royalblue;
+    text-decoration: none;
 }

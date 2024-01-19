@@ -78,7 +78,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         }
 
         if($stmt->execute()) {
-            // If insert succeeds, redirect user to login
+            // If the registration process succeeds, redirect user to the login form
             header("location: login.php");
         } else {
             echo "Something unexpected happened.";

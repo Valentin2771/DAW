@@ -45,7 +45,7 @@
                             <a href="post.php?id=<?php echo $posts[$i]['id']; ?>">More</a>
                         </article>
                         <!-- We need to clearfix after each line of three articles or at the end of the last article -->
-                        <!-- in order to avoid unwanted floating effects -->
+                        <!-- in order to avoid unexpected floating effects -->
                         <?php 
                             if((($i + 1 != 0) && (($i + 1) % 3 == 0)) || $i == count($posts) - 1) echo '<div class="clearfix"></div>';
                              endfor;

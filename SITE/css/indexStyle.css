@@ -13,9 +13,10 @@ h1, h2, h3{
     text-align: center;
 }
 
-h1 a, h2 a, h3 a{
-    color: inherit;
+a:visited, a:link {
+    color: royalblue;
 }
+
 .blue{
     color: royalblue;
     background-color: whitesmoke;

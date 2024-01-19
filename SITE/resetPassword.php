@@ -26,7 +26,8 @@
             <input type="password" name="confirmPassword" placeholder="Confirm password"><br>
             <span><?php echo $confirmPasswordError; ?></span><br>
             <input type="submit" value="Change"><br>
-            </form>
+            </form><br>
+            <a href="index.php" target="_self" class="button-link">First page</a>
         </div>
     </body>
 </html>

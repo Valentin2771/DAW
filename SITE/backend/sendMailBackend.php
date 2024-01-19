@@ -3,7 +3,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
-$mailError = "";
+$mailError = $mailSuccess = "";
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     require_once __DIR__."/helper.php";
@@ -22,12 +22,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $mail->isSMTP();
     $mail->SMTPAuth = true;
 
-    $mail->Host = ""; // the smtp server,like smtp.gmail.com
+    $mail->Host = "smtp.gmail.com"; // the smtp server
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 
-    $mail->Username = ""; // The user login for the smtp server
-    $mail->Password = ""; // The app password provided by Gmail, once the Two-Steps authentication is set
+    $mail->Username = "valentintestdaw@gmail.com"; // The user login for the smtp server
+    $mail->Password = "nogjzigufherxyvo"; // The app password provided by Gmail, once the Two-Steps authentication is set
 
     $mail->setFrom($email, $name); 
     // setting the first parameter will not work, due to DKIM https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail
@@ -41,15 +41,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     */
 
     $mail->Subject = $subject;
-    $stringToBody = "Hey, the registered user '" . $name . "', having " . $email . " as mail address, has sent you the following message:<div>". $content . "<div>";
-    $mail->addAddress("", "Blue Jack"); // This is where to receive emails
+    $stringToBody = "Hey, the unregistered user '" . $name . "', having " . $email . " as mail address, has sent you the following message:<div>". $content . "<div>";
+    $mail->addAddress("valentin.iclozan27@gmail.com", "Blue Jack"); // This is where to receive emails
     $mail->Body = $stringToBody;
     $mail->isHTML(true); // Message can contain html code
 
     try{
         $mail->send();
-        $mailError = "Message successfully sent<br>";
+        header("location: index.php"); // Redirect user to the landing page on sending successfully
     } catch(Exception $e){
-        $mailError = "Message not sent<br>";
+        $mailError = "Message not sent"; // Show an error message if message not sent
     }
 }

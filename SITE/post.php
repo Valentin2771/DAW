@@ -39,7 +39,7 @@
         <footer>
             <section id="footer-content">
                 <p>Contact <a href="mailto:valentin.iclozan27@gmail.com">via e-mail</a></p>
-                <p>Acesta este un proiect școlar, care a avut în vedere respectarea condițiilor de copyright. Fotografiile utilizate sunt preluate din <a href="https://pixabay.com/" target="_blank">surse gratuite</a>. Întreg codul scris, modificat și testat de studentul <a href="https://adrian2771.github.io/studyproject/">Adrian Valentin Iclozan</a></p>
+                <p>Acesta este un proiect școlar, care a avut în vedere respectarea condițiilor de copyright. Fotografiile utilizate sunt preluate din <a href="https://pixabay.com/" target="_blank">surse gratuite</a>. Întreg codul a fost scris, modificat și testat de studentul <a href="https://adrian2771.github.io/studyproject/">Adrian Valentin Iclozan</a></p>
             </section>
         </footer>
     </body>

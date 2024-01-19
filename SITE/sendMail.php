@@ -1,8 +1,8 @@
 <?php
     session_start();
 
-    if(!isset($_SESSION['authenticated'])){
-        header('Location: index.php');
+    if(isset($_SESSION['authenticated'])){
+        header('Location: user.php');
         die;
     }
 
@@ -31,10 +31,16 @@
             <input type="text" name="subject" id="subject" placeholder="The subject you want to take up with us" required><br>
             <label for="content">Message</label><br>
             <textarea name="content" id="content" placeholder="Message up to 3000 characters" maxlength="3000"></textarea>
-            <p class="red"><?php echo $mailError;?></p>
-            <button>Send</button>
+            <span class="red"><?php echo $mailError; ?></span><br><br>
+            <input type="submit" id="submit" value="submit" disabled><br><br>
+            <input type="text" name="validation" id="validation" placeholder="Captcha"><br><br>
         </form>
+        <div id="captchaBackrgound">
+                <canvas id="captcha"></canvas>
+            </div>
+            <span id="buttonVal">Validate</span>
         <a href="index.php" target="_self" class="button-link">First page</a>
-    </div>
+        </div>
+    <script src="js/captcha.js"></script>
 </body>
 </html>
