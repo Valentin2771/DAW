@@ -35,6 +35,10 @@ $sql = "SELECT posts.id,
         ON posts.picture_id = pics.id " . $allPosts . " ORDER BY posts.id DESC LIMIT :postsPerPage OFFSET :offset";
 try {
     
+    if(!isset($connection)){
+        throw new Exception();
+    }
+
     $stmt = $connection->prepare($sql);
     $stmt->bindParam(':postsPerPage', $postsPerPage, PDO::PARAM_INT);
     $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
