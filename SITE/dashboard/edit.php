@@ -13,7 +13,7 @@ require_once __DIR__."/backend/editBackend.php";
         <div class="clearfix">
             <section class="sixty">
                 <h2>Edit</h2>
-                <a href="../user.php">User's page</a>
+                <a href="../user.php" class="button-link">User's page</a>
 
                 <form id="post-form" action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
                     <label for="postid">Modifying post with id = </label>

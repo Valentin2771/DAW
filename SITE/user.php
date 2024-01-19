@@ -48,15 +48,15 @@
             <section id="posts" class="table-wrapper">
                 <h3 id="editor">Posts</h3>
                 <table>
-                    <tr><th>Post Id</th><th>Post Title</th><th>Picture id</th><th>Public status</th><th>Created at</th><th>Modified at</th><th>Edit post</th><th>Delete post</th></tr>
+                    <tr><th>Post Id</th><th>Post Title</th><th>Picture id</th><th>Public status</th><th>Created at</th><th>Author id</th><th>Edit post</th><th>Delete post</th></tr>
                     <?php 
-                        $sql = "SELECT id, post_title, picture_id, public, created_at, modified_at FROM posts ORDER BY id DESC";
+                        $sql = "SELECT id, post_title, author_id, picture_id, public, created_at FROM posts ORDER BY id DESC";
                         if($stmt = $connection->query($sql)){
                             $data = $stmt->fetchAll();
                             foreach($data as $row){
                                 if($_SESSION['role'] == 'admin')
                                 {
-                                    echo "<tr><td>" . $row['id'] . "</td><td>" . $row['post_title'] . "</td><td>" . $row['picture_id'] . "</td><td>" . $row['public'] . "</td><td>" . $row['created_at'] . "</td><td>" . $row['modified_at'] . "</td><td><a href='dashboard/edit.php?postid=" . $row['id'] . "'>Edit</a></td><td><a href='dashboard/backend/deletePost.php?postid=" . $row['id'] . "'>Delete</a></td></tr>";
+                                    echo "<tr><td>" . $row['id'] . "</td><td>" . $row['post_title'] . "</td><td>" . $row['picture_id'] . "</td><td>" . $row['public'] . "</td><td>" . $row['created_at'] . "</td><td>" . $row['author_id'] . "</td><td><a href='dashboard/edit.php?postid=" . $row['id'] . "'>Edit</a></td><td><a href='dashboard/backend/deletePost.php?postid=" . $row['id'] . "'>Delete</a></td></tr>";
                                 }
                                 
                             }

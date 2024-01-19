@@ -15,30 +15,30 @@ h1, h2{
 }
 .sixty{
     width:60%;
-    float: left;
-    
+    float: left;    
 }
 
 .forty{
     width:40%;
     float: left;
-    
 }
 
 #post-form{
-    border: 2px black solid;
+    border: 2px solid black;
     border-radius: .3rem;
-    width:95%;
+    width: 95%;
     padding: 1rem;
+    margin: 0 auto 1rem !important;
 }
 
 #title, #content{
     display: block;
-    margin: .3rem;
-    width: 90%;
+    margin: .3rem auto;
+    width: 95%;
 }
 
 #content{
+    border-radius: .3rem;
     height:18rem;
     padding: .3rem;
     font-size: medium;
@@ -50,8 +50,9 @@ h1, h2{
     clear:both;
 }
 
-table{
+#img-table > table{
     width: 90%;
+    margin: 2rem auto 1rem;
 }
 
 table, th, td{
@@ -62,4 +63,13 @@ table, th, td{
 td, th{
     padding: .3rem;
     font-size: small;
+}
+
+.button-link {
+    text-decoration: none;
+    display: inline-block;
+    background-color: gainsboro;
+    padding: .3rem;
+    margin-bottom: .3rem;
+    margin-left: .3rem;
 }

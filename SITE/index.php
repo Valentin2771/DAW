@@ -18,6 +18,7 @@
         <nav>
             <a href="login.php">Login</a>
             <a href="register.php">Register</a>
+            <a href="sendMail.php">Contact us</a>
         </nav>
     </header>
     <main>
