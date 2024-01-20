@@ -23,7 +23,8 @@
     </header>
     <main>
         <section id="all-stories">
-        <h2>Toate titlurile</h2>
+        <h2 id="top">Toate titlurile</h2>
+        <span class="fixed-button"><a href="#top">Top</a></span>
         <?php
             try{
                 if(!isset($posts)){
@@ -43,9 +44,8 @@
                             <p><?php echo mb_strimwidth($posts[$i]['post_content'], 0, 100, '...'); ?></p>
                             <p class="author">Author: <?php echo $posts[$i]['first_name'] . ' ' . $posts[$i]['last_name'] . ' &bull; ' . $posts[$i]['created_at']; ?></p>
                             <a href="post.php?id=<?php echo $posts[$i]['id']; ?>">More</a>
-                        </article>
-                        <!-- We need to clearfix after each line of three articles or at the end of the last article -->
-                        <!-- in order to avoid unexpected floating effects -->
+                        </article><!-- We need to clearfix after each line of three articles or at the end of the last article,
+                         in order to avoid unexpected floating effects -->
                         <?php 
                             if((($i + 1 != 0) && (($i + 1) % 3 == 0)) || $i == count($posts) - 1) echo '<div class="clearfix"></div>';
                              endfor;

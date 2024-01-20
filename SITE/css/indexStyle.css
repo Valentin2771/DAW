@@ -89,6 +89,20 @@ header, footer{
     clear:both;
 }
 
+.fixed-button{
+    display: none;
+    position:fixed;
+	top:50vh;
+	right:1em;
+    background-color: black;
+    border-radius:50%;
+    padding: .4em;
+}
+
+.fixed-button > a {
+    color: whitesmoke;
+}
+
 .single-post{
     margin: 0 auto;
     width: 98%;
@@ -105,4 +119,42 @@ header, footer{
 .single-post-img > img{
     width: 100%;
     padding:.3em;
+}
+
+/* Tablet */
+@media only screen and (min-width: 768px) and (max-width: 1023px){
+
+    .one-third{
+        width: 49%;
+        margin: 1% auto;
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+ 
+    .clearfix{
+        display: none;
+    }
+}
+
+/* Mobile */
+@media only screen and (max-width:767px) {
+
+    .one-third{
+        width: 90%;
+        margin: auto;
+        float: none;
+    }
+
+    nav > a{
+        display: block;
+        width:100%;
+        border-bottom: 1px gray solid;
+        text-align: center;
+    }
+
+    .fixed-button{
+        display: inline-block;
+    }
+
 }

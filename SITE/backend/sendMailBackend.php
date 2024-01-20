@@ -22,12 +22,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $mail->isSMTP();
     $mail->SMTPAuth = true;
 
-    $mail->Host = "smtp.gmail.com"; // the smtp server
+    $mail->Host = ""; // the smtp server, like smtp.gmail.com
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 
-    $mail->Username = "valentintestdaw@gmail.com"; // The user login for the smtp server
-    $mail->Password = "nogjzigufherxyvo"; // The app password provided by Gmail, once the Two-Steps authentication is set
+    $mail->Username = ""; // The user login for the smtp server like 'john.doe12356@gmail.com'
+    $mail->Password = ""; // The 16-character app password provided by Gmail, once the Two-Steps authentication is set
 
     $mail->setFrom($email, $name); 
     // setting the first parameter will not work, due to DKIM https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail

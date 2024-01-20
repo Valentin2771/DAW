@@ -29,11 +29,12 @@
                                 echo '<a href="dashboard/add.php">Add an article</a>';
                         ?>
                     </li>
+                    <li>
                         <?php
                             if($_SESSION['role'] == 'admin')
                                 echo '<a href="#editor">Edit/Delete an article</a>';
                         ?>
-                    <li>
+                    </li>
                     
                 </ul>
             </nav>

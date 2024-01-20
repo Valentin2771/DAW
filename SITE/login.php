@@ -12,9 +12,9 @@
         <div class="wrapper">
             <h2>Login</h2>
             <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-                <input type="text" name="username" placeholder="User name"><br>
+                <input type="text" name="username" placeholder="User name" class="custom-input"><br>
                 <span class="red"><?php echo $usernameError; ?></span><br>
-                <input type="password" name="password" placeholder="Password"><br>
+                <input type="password" name="password" placeholder="Password" class="custom-input"><br>
                 <span class="red"><?php echo $passwordError; ?></span><br>
                 <input type="submit" value="Login"><br>
             </form><br>

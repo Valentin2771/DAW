@@ -24,16 +24,16 @@
         
         <form id="mail-form" method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
             <label for="name">First and last name:</label><br>
-            <input type="text" name="name" id="name" placeholder="Provide your full name" required><br>
+            <input type="text" name="name" id="name" placeholder="Provide your full name" required class="custom-input"><br>
             <label for="email">Email:</label><br>
-            <input type="email" name="email" id="email" placeholder="Provide a valid address" required><br>
+            <input type="email" name="email" id="email" placeholder="Provide a valid address" required class="custom-input"><br>
             <label for="subject">Subject</label><br>
-            <input type="text" name="subject" id="subject" placeholder="The subject you want to take up with us" required><br>
+            <input type="text" name="subject" id="subject" placeholder="The subject you want to take up with us" required class="custom-input"><br>
             <label for="content">Message</label><br>
-            <textarea name="content" id="content" placeholder="Message up to 3000 characters" maxlength="3000"></textarea>
+            <textarea name="content" id="content" placeholder="Message up to 3000 characters" maxlength="3000"></textarea><br>
             <span class="red"><?php echo $mailError; ?></span><br><br>
             <input type="submit" id="submit" value="submit" disabled><br><br>
-            <input type="text" name="validation" id="validation" placeholder="Captcha"><br><br>
+            <input type="text" name="validation" id="validation" placeholder="Captcha" class="custom-input"><br>
         </form>
         <div id="captchaBackrgound">
                 <canvas id="captcha"></canvas>

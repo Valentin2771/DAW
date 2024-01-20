@@ -47,16 +47,20 @@ a:visited, a:link {
     margin: 0 auto 1rem !important;
 }
 
-#content, #name, #subject, #email{
-    display: block;
-    margin: .3rem auto 0;
-    width: 90%;
+#content, .custom-input{
+    display: inline-block;
+    margin: .3rem auto;
     padding: .3rem;
+}
+
+.custom-input{
+    width: 50%;
 }
 
 #content {
     font-size: medium;
     height:18rem;
+    width: 90%;
 }
 
 .button-link {
@@ -88,4 +92,14 @@ a:visited, a:link {
     letter-spacing: 3px;
     margin: auto;
     display: block;
+}
+
+@media screen and (max-width:767px){
+    .wrapper{
+        max-width: 100%;
+    }
+
+    .custom-input{
+        width: 90%;
+    }
 }

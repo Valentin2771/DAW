@@ -79,3 +79,11 @@ a:visited, a:link{
     color: royalblue;
     text-decoration: none;
 }
+
+@media only screen and (max-width:767px) {
+    .sixty, .forty {
+        width:93%;
+        margin: auto;
+        float:none;
+    }
+}

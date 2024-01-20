@@ -24,7 +24,8 @@
         </header>
         <main>
             <section>
-                <h2 class='blue'><?php echo $title; ?></h2>
+                <h2 class='blue' id="top"><?php echo $title; ?></h2>
+                <span class="fixed-button"><a href="#top">Top</a></span>
                 <article class="single-post">
                     <div class="single-post-img">
                         <img <?php echo "src='img/" . $picture . "' alt='post image'"; ?>> 
